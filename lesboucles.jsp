@@ -113,7 +113,7 @@
      <% } %>
 </p>
 <p>
-    <% for (int i = (cpt - 1); i >= 1; i--) { %>
+    <% for (int i = cpt; i >= 1; i--) { %>
         <%for (int j = 1; j <= (cpt - i); j++) { %>
            <%= "&nbsp;&nbsp;" %> 
        <% } %>
