@@ -111,6 +111,8 @@
         <% } %>
         <br>
      <% } %>
+</p>
+<p>
     <% for (int i = (cpt - 1); i >= 1; i--) { %>
         <%for (int j = 1; j <= (cpt - i); j++) { %>
            <%= "&nbsp;&nbsp;" %> 
@@ -129,7 +131,11 @@
 <p>5 x 3 = 15</p>
 <p>5 x 4 = 20</p>
 <p>5 x 5 = 25</p>
-
+<p>
+    <% for (int i = 1; i <= cpt; i++) { %>
+       <p><%= cpt %> x <%= i %> = <%= cpt * i %></p>
+    <% } %>
+    </p>
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
