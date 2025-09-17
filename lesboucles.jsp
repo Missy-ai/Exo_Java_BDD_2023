@@ -86,7 +86,7 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;***</br>&nbsp;****</br>*****</p>
 <p>
     <% for (int i = 1; i <= cpt; i++) { %>
-        <% for (int j = 1; j <= (cpt - i); j++) { %>
+        <% for (int j = 1; j <= (cpt - i); j--) { %>
            <%= "&nbsp;&nbsp;" %> 
         <% } %>
         <% for (int k = 1; k <= (2 * i - 1); k++) { %>
