@@ -61,7 +61,7 @@ Oui C est compris entre A et B</p>
        <% } else { %>
              Non, <%= intValeurC %> n'est compris pas entre <%= min %> et <%= max %>
          <% }
-    <% }
+       }
   %>
 </p>
 
