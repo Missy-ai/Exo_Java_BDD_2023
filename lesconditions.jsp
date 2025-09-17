@@ -58,11 +58,11 @@ Oui C est compris entre A et B</p>
         <%-- Condition if pour comparer les valeurs --%>
         <% if (intValeurC >= min && intValeurC <= max) { %>
             Oui, <%= intValeurC %> est compris entre <%= min %> et <%= max %>
-        <% }
-       else { %>
+       <% } else { %>
              Non, <%= intValeurC %> n'est compris pas entre <%= min %> et <%= max %>
          <% }
     <% }
+  %>
 </p>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
