@@ -39,6 +39,32 @@ B = 20</br>
 C = 15</br>
 Oui C est compris entre A et B</p>
 
+<p>
+    <%-- Récupération des valeurs --%>
+    <% String valeurA = request.getParameter("A"); %>
+    <% String valeurB = request.getParameter("B"); %>
+    <% String valeurC = request.getParameter("C"); %>
+
+    <%-- Vérification de la condition entre les trois valeurs --%>
+    <% if (valeurA != null && valeurB != null && valeurC != null) { %>
+        <%-- Conversion des valeurs en entiers pour la comparaison --%>
+        <% int intValeurA = Integer.parseInt(valeurA); %>
+        <% int intValeurB = Integer.parseInt(valeurB); %>
+        <% int intValeurC = Integer.parseInt(valeurC); %>
+
+        <% int min = Math.min (intValeurA, intValeurB); %>
+        <% int max = Math.max (intValeurA, intValeurB); %>
+        
+        <%-- Condition if pour comparer les valeurs --%>
+        <% if (intValeurC >= min && intValeurC <= max) { %>
+            Oui, <%= intValeurC %> est compris entre <%= min %> et <%= max %>
+        <% }
+       else { %>
+             Non, <%= intValeurC %> n'est compris pas entre <%= min %> et <%= max %>
+         <% }
+    <% }
+</p>
+
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
 
