@@ -49,9 +49,9 @@ Oui C est compris entre A et B</p>
 <p>
 
     <%-- Récupération des valeurs --%>
-    <% String valeurA = request.getParameter("A"); %>
-    <% String valeurB = request.getParameter("B"); %>
-    <% String valeurC = request.getParameter("C"); %>
+    <% String val1 = request.getParameter("A"); %>
+    <% String val2 = request.getParameter("B"); %>
+    <% String val2 = request.getParameter("C"); %>
 
     <%-- Vérification de la condition entre les trois valeurs --%>
     <% if (valeurA != null && valeurB != null && valeurC != null) { %>
