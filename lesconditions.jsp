@@ -67,7 +67,7 @@ Oui C est compris entre A et B</p>
         <% if (intValeurC >= min && intValeurC <= max) { %>
             Oui, <%= intValeurC %> est compris entre <%= min %> et <%= max %>
        <% } else { %>
-             Non, <%= intValeurC %> n'est compris pas entre <%= min %> et <%= max %>
+             Non, <%= intValeurC %> n'est pas compris entre <%= min %> et <%= max %>
          <% }
        }
   %>
