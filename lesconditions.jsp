@@ -63,9 +63,6 @@ Oui C est compris entre A et B</p>
         <% int min = Math.min (intValeurA, intValeurB); %>
         <% int max = Math.max (intValeurA, intValeurB); %>
 
-        if (request.getParameter("Vérifier") != null || request.getParameter("A") != null) {
-        %>
-        
         <%-- Condition if pour comparer les valeurs --%>
         <% if (intValeurC >= min && intValeurC <= max) { %>
             Oui, <%= intValeurC %> est compris entre <%= min %> et <%= max %>
