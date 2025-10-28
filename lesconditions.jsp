@@ -51,10 +51,10 @@ Oui C est compris entre A et B</p>
     <%-- Récupération des valeurs --%>
     <% String val1 = request.getParameter("A"); %>
     <% String val2 = request.getParameter("B"); %>
-    <% String val2 = request.getParameter("C"); %>
+    <% String val3 = request.getParameter("C"); %>
 
     <%-- Vérification de la condition entre les trois valeurs --%>
-    <% if (valeurA != null && valeurB != null && valeurC != null) { %>
+    <% if (val1 != null && val2 != null && val3 != null) { %>
         <%-- Conversion des valeurs en entiers pour la comparaison --%>
         <% int intValeurA = Integer.parseInt(valeurA); %>
         <% int intValeurB = Integer.parseInt(valeurB); %>
