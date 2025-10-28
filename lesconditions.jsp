@@ -40,6 +40,11 @@ C = 15</br>
 Oui C est compris entre A et B</p>
 
 <p>
+
+    <p>A : <input type="text" name="A"></p>
+    <p>B : <input type="text" name="B"></p>
+    <p>C : <input type="text" name="C"></p>
+
     <%-- Récupération des valeurs --%>
     <% String valeurA = request.getParameter("A"); %>
     <% String valeurB = request.getParameter("B"); %>
