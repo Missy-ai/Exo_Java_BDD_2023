@@ -93,7 +93,6 @@ if (valeur3 != null && !valeur3.isEmpty()) {
 <%  } 
 } %>
 
-<% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
