@@ -39,11 +39,14 @@ B = 20</br>
 C = 15</br>
 Oui C est compris entre A et B</p>
 
-<p>
 
+<form action="#" method="post">
     <p>A : <input type="text" name="A"></p>
     <p>B : <input type="text" name="B"></p>
     <p>C : <input type="text" name="C"></p>
+    <input type="submit" value="Vérifier">
+</form>
+<p>
 
     <%-- Récupération des valeurs --%>
     <% String valeurA = request.getParameter("A"); %>
