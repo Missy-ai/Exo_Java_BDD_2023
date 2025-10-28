@@ -56,9 +56,9 @@ Oui C est compris entre A et B</p>
     <%-- Vérification de la condition entre les trois valeurs --%>
     <% if (val1 != null && val2 != null && val3 != null) { %>
         <%-- Conversion des valeurs en entiers pour la comparaison --%>
-        <% int intValeurA = Integer.parseInt(valeurA); %>
-        <% int intValeurB = Integer.parseInt(valeurB); %>
-        <% int intValeurC = Integer.parseInt(valeurC); %>
+        <% int intValeurA = Integer.parseInt(val1); %>
+        <% int intValeurB = Integer.parseInt(val2); %>
+        <% int intValeurC = Integer.parseInt(val3); %>
 
         <% int min = Math.min (intValeurA, intValeurB); %>
         <% int max = Math.max (intValeurA, intValeurB); %>
