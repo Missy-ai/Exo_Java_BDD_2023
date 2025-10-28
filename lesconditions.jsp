@@ -41,20 +41,20 @@ Oui C est compris entre A et B</p>
 
 
 <form action="#" method="post">
-    <p>A : <input type="text" name="A"></p>
-    <p>B : <input type="text" name="B"></p>
-    <p>C : <input type="text" name="C"></p>
+    <p>A : <input type="text" name="val1"></p>
+    <p>B : <input type="text" name="val2"></p>
+    <p>C : <input type="text" name="val3"></p>
     <input type="submit" value="Vérifier">
 </form>
 <p>
 
     <%-- Récupération des valeurs --%>
-    <% String val1 = request.getParameter("A"); %>
-    <% String val2 = request.getParameter("B"); %>
-    <% String val3 = request.getParameter("C"); %>
+    <% String val1 = request.getParameter("val1"); %>
+    <% String val2 = request.getParameter("val2"); %>
+    <% String val3 = request.getParameter("val3"); %>
 
     <%-- Vérification de la condition entre les trois valeurs --%>
-    <% if (val1 != null && val2 != null && val3 != null) { %>
+    <% if (val1 != null && val2 != null && val3 != null &&  !valeur1.isEmpty() && !valeur2.isEmpty() && !valeur3.isEmpty()) { %>
         <%-- Conversion des valeurs en entiers pour la comparaison --%>
         <% int intValeurA = Integer.parseInt(val1); %>
         <% int intValeurB = Integer.parseInt(val2); %>
