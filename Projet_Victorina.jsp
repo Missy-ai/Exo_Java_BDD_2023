@@ -4,8 +4,8 @@
 
 <%
     // Préparation du format de la date pour l'entrée et l'affichage
-    SimpleDateFormat sdfInput = new SimpleDateFormat("yyyy-MM-dd"); // format reçu du <input type="date">
-    SimpleDateFormat sdfOutput = new SimpleDateFormat("dd/MM/yyyy"); // format affiché dans le tableau
+    SimpleDateFormat sdfInput = new SimpleDateFormat("yyyy-MM-dd"); 
+    SimpleDateFormat sdfOutput = new SimpleDateFormat("dd/MM/yyyy");
 
     // Création d'une classe simple pour les tâches
     class Task {
@@ -112,7 +112,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            background-color: #2196F3; /* bleu */
+            background-color: #2196F3;
             color: white;
             font-weight: bold;
         }
@@ -129,9 +129,9 @@
             font-weight: bold;
             margin-right: 5px;
         }
-        a.terminer { background-color: #4CAF50; } /* vert */
+        a.terminer { background-color: #4CAF50; }
         a.terminer:hover { background-color: #388E3C; }
-        a.supprimer { background-color: #f44336; } /* rouge */
+        a.supprimer { background-color: #f44336; }
         a.supprimer:hover { background-color: #d32f2f; }
 
         /* Tableau des tâches */
@@ -158,8 +158,8 @@
         }
 
         /* Couleur des lignes selon l'état */
-        .task-row { background-color: #e3f2fd; } /* bleu clair = tâche en cours */
-        .task-row.completed { background-color: #c8e6c9; text-decoration: line-through; } /* vert clair = terminée */
+        .task-row { background-color: #e3f2fd; }
+        .task-row.completed { background-color: #c8e6c9; text-decoration: line-through; }
     </style>
 </head>
 <body>
