@@ -3,11 +3,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-    // Préparation du format de la date pour l'entrée et l'affichage
+    // Préparation du format de la date
     SimpleDateFormat sdfInput = new SimpleDateFormat("yyyy-MM-dd"); 
     SimpleDateFormat sdfOutput = new SimpleDateFormat("dd/MM/yyyy");
 
-    // Création d'une classe simple pour les tâches
+    // Création d'une classe pour les tâches
     class Task {
         private String titre;
         private String description;
@@ -74,14 +74,14 @@
     <meta charset="UTF-8">
     <title>Mini Gestionnaire de Tâches</title>
     <style>
-        /* Style général de la page */
+        // Style général de la page
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             padding: 20px;
         }
 
-        /* Conteneur central */
+        // Conteneur central
         .container {
             max-width: 900px;
             margin: auto;
@@ -95,7 +95,7 @@
             text-align: center;
         }
 
-        /* Formulaire d'ajout */
+        //Formulaire d'ajout
         form p {
             margin: 10px 0;
         }
@@ -106,7 +106,7 @@
             border: 1px solid #ccc;
         }
 
-        /* Bouton Ajouter */
+        // Bouton Ajouter
         input[type="submit"] {
             padding: 8px 15px;
             border: none;
@@ -120,7 +120,7 @@
             background-color: #1976D2;
         }
 
-        /* Boutons d'action dans le tableau */
+        // Boutons d'action dans le tableau 
         a.button {
             padding: 5px 10px;
             border-radius: 5px;
@@ -134,7 +134,7 @@
         a.supprimer { background-color: #f44336; }
         a.supprimer:hover { background-color: #d32f2f; }
 
-        /* Tableau des tâches */
+        // Tableau des tâches
         table {
             width: 100%;
             border-collapse: collapse;
@@ -149,7 +149,7 @@
             background-color: #ddd;
         }
 
-        /* Message quand aucune tâche n'existe */
+        // Message quand aucune tâche n'existe
         .no-tasks {
             text-align: center;
             font-style: italic;
@@ -157,7 +157,7 @@
             color: #555;
         }
 
-        /* Couleur des lignes selon l'état */
+        // Couleur des lignes selon l'état 
         .task-row { background-color: #e3f2fd; }
         .task-row.completed { background-color: #c8e6c9; text-decoration: line-through; }
     </style>
