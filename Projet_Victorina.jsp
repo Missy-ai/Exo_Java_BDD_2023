@@ -64,7 +64,7 @@
 
     <h1>Mini Gestionnaire de Tâches</h1>
 
-    <!Formulaire d’ajout>
+    <!-- Formulaire d’ajout -->
     <form method="post">
         <input type="hidden" name="action" value="ajouter">
         <p><b>Titre :</b> <input type="text" name="titre" required></p>
