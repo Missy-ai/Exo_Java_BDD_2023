@@ -4,8 +4,8 @@
 <%
 
             //Préparation du format de la date
-    SimpleDateFormat sdfInput = new SimpleDateFormat("aaaa-MM-jj");
-    SimpleDateFormat sdfOutput = new SimpleDateFormat("jj-MM-aaaa");
+    SimpleDateFormat sdfInput = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat sdfOutput = new SimpleDateFormat("dd-MM-yyyy");
             //Création d'une classe simple pour les tâches
     class Task {
         private String titre;
