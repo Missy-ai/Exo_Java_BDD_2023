@@ -3,11 +3,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-    // Préparer le format de la date
-    SimpleDateFormat sdfInput = new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat sdfOutput = new SimpleDateFormat("dd/MM/yyyy");
+    // Préparation du format de la date pour l'entrée et l'affichage
+    SimpleDateFormat sdfInput = new SimpleDateFormat("yyyy-MM-dd"); // format reçu du <input type="date">
+    SimpleDateFormat sdfOutput = new SimpleDateFormat("dd/MM/yyyy"); // format affiché dans le tableau
 
-    // Classe Task
+    // Création d'une classe simple pour les tâches
     class Task {
         private String titre;
         private String description;
@@ -28,20 +28,23 @@
         public void setTerminee(boolean t) { terminee = t; }
     }
 
-    // Liste des tâches en session
+    // Liste des tâches stockée en session
     ArrayList<Task> taches = (ArrayList<Task>) session.getAttribute("taches");
     if (taches == null) {
         taches = new ArrayList<>();
         session.setAttribute("taches", taches);
     }
 
-    // Actions
+    // Gestion des actions : ajouter, supprimer, terminer
     String action = request.getParameter("action");
+
+    // Ajouter une tâche
     if ("ajouter".equals(action)) {
         String titre = request.getParameter("titre");
         String desc = request.getParameter("description");
         String date = request.getParameter("date");
 
+        // Conversion de la date en format dd/MM/yyyy
         if (date != null && !date.isEmpty()) {
             Date parsedDate = sdfInput.parse(date);
             date = sdfOutput.format(parsedDate);
@@ -51,10 +54,14 @@
             taches.add(new Task(titre, desc, date));
         }
     }
+
+    // Supprimer une tâche
     if ("supprimer".equals(action)) {
         int index = Integer.parseInt(request.getParameter("index"));
         if (index >= 0 && index < taches.size()) taches.remove(index);
     }
+
+    // Marquer une tâche comme terminée
     if ("terminer".equals(action)) {
         int index = Integer.parseInt(request.getParameter("index"));
         if (index >= 0 && index < taches.size()) taches.get(index).setTerminee(true);
@@ -65,27 +72,30 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mini Gestionnaire de Tâches - Victorina</title>
+    <title>Mini Gestionnaire de Tâches</title>
     <style>
+        /* Style général de la page */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             padding: 20px;
         }
+
+        /* Conteneur central */
         .container {
+            max-width: 900px;
+            margin: auto;
             background-color: #fff;
             padding: 25px 40px;
             border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-            width: 600px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
         }
+
         h1, h2 {
             text-align: center;
         }
+
+        /* Formulaire d'ajout */
         form p {
             margin: 10px 0;
         }
@@ -95,18 +105,22 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+
+        /* Bouton Ajouter */
         input[type="submit"] {
             padding: 8px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #2196F3; /* bleu */
             color: white;
             font-weight: bold;
         }
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #1976D2;
         }
+
+        /* Boutons d'action dans le tableau */
         a.button {
             padding: 5px 10px;
             border-radius: 5px;
@@ -115,10 +129,12 @@
             font-weight: bold;
             margin-right: 5px;
         }
-        a.terminer { background-color: #2196F3; }
-        a.terminer:hover { background-color: #1976D2; }
-        a.supprimer { background-color: #f44336; }
+        a.terminer { background-color: #4CAF50; } /* vert */
+        a.terminer:hover { background-color: #388E3C; }
+        a.supprimer { background-color: #f44336; } /* rouge */
         a.supprimer:hover { background-color: #d32f2f; }
+
+        /* Tableau des tâches */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -126,18 +142,24 @@
         }
         table th, table td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 10px;
             text-align: center;
         }
         table th {
             background-color: #ddd;
         }
+
+        /* Message quand aucune tâche n'existe */
         .no-tasks {
             text-align: center;
             font-style: italic;
             margin-top: 20px;
             color: #555;
         }
+
+        /* Couleur des lignes selon l'état */
+        .task-row { background-color: #e3f2fd; } /* bleu clair = tâche en cours */
+        .task-row.completed { background-color: #c8e6c9; text-decoration: line-through; } /* vert clair = terminée */
     </style>
 </head>
 <body>
@@ -157,6 +179,7 @@
 
     <h2>Liste des tâches</h2>
 
+    <!-- Vérification si la liste est vide -->
     <% if (taches.isEmpty()) { %>
         <div class="no-tasks">Vous n'avez aucune tâche</div>
     <% } else { %>
@@ -168,10 +191,13 @@
                 <th>État</th>
                 <th>Actions</th>
             </tr>
+
+            <!-- Boucle sur les tâches -->
             <% for (int i = 0; i < taches.size(); i++) {
                    Task t = taches.get(i);
+                   String rowClass = t.isTerminee() ? "task-row completed" : "task-row";
             %>
-            <tr>
+            <tr class="<%=rowClass%>">
                 <td><%= t.getTitre() %></td>
                 <td><%= t.getDescription() %></td>
                 <td><%= t.getDate() %></td>
