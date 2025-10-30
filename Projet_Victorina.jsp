@@ -16,9 +16,6 @@
             this.terminee = false;
         }
 
-                 //Formatage de la date
-        public String getDateFormatee(){
-            try
 
         public String getTitre() { return titre; }
         public String getDescription() { return description; }
@@ -66,7 +63,7 @@
 </head>
 <body style="font-family: Arial; background-color: #f0f0f0; padding: 20px;">
 
-    <h1>Mini Gestionnaire de Tâches</h1>
+    <h1>Mini gestionnaire de tâches</h1>
 
     <!-- Formulaire d’ajout -->
     <form method="post">
