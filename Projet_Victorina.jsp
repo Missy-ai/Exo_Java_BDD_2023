@@ -2,6 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
+
+            //Préparation du format de la date
+    SimpleDateFormat sdfInput = new SimpleDateFormat("aaaa-MM-jj");
+    SimpleDateFormat sdfOutput = new SimpleDateFormat("jj-MM-aaaa");
             //Création d'une classe simple pour les tâches
     class Task {
         private String titre;
@@ -37,6 +41,12 @@
         String titre = request.getParameter("titre");
         String desc = request.getParameter("description");
         String date = request.getParameter("date");
+
+        if (date != null && !date.isEmpty()) {
+            Date parsedDate = sdfInput.parse(date);
+            date = sdfOutput.format(parsedDate);
+        }
+
         if (titre != null && !titre.isEmpty()) {
             taches.add(new Task(titre, desc, date));
         }
