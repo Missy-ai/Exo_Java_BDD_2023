@@ -16,6 +16,10 @@
             this.terminee = false;
         }
 
+                 //Formatage de la date
+        public String getDateFormatee(){
+            try
+
         public String getTitre() { return titre; }
         public String getDescription() { return description; }
         public String getDate() { return date; }
